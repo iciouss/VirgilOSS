@@ -6,16 +6,21 @@ class Alert:
 		self.location=location
 		self.reward=reward
 		self.timeLeft=setTimeLeft(timeLeft)
-		self.booleano,self.timeStart=setTimeStart(timeStart)
+		self.timeStart=setTimeLeft(timeStart)
+		self.booleano,self.stringStart=setStringStart(timeStart)
 		self.color=setColor(timeLeft)
 
 	def changeMessage(self,msg):
 		self.msg=msg
 
+	def addMention(self,msg):
+		self.mention=msg
+		self.hasMention=True
+
 	def toEmbed(self):
 		embed=discord.Embed(title=self.reward, color=self.color)
 		embed.add_field(name=self.missionType, value=self.location, inline=True)
-		embed.add_field(name=self.timeStart, value=self.timeLeft if self.booleano else self.timeStart, inline=True)
+		embed.add_field(name=self.stringStart, value=self.timeLeft if self.booleano else self.timeStart, inline=True)
 		return embed	
 
 	def __hash__(self):
@@ -45,7 +50,7 @@ def setTimeLeft(timeLeft):
 	else:
 		return "{} hours {} minutes".format(timeLeft.hour, timeLeft.minute)
 
-def setTimeStart(timeStart):
+def setStringStart(timeStart):
 	if(timeStart.minute>=0 and timeStart.second>0):
 		return False,"Starts In"
 	else:
