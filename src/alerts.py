@@ -6,7 +6,7 @@ import discord
 from alertClass import *
 
 #role to mention
-roleID = "<@&469267150935162890>"
+roleID = "<@&469279521044955156>"
 
 #Function to obtain current date in milliseconds
 current_milli_time = lambda: int(round(time.time() * 1000))

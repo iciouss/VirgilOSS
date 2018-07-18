@@ -13,7 +13,7 @@ from alerts import *
 from cetus import *
 
 TOKEN = 'NDY3NDYzOTAyOTc2OTMzODg4.Diq_fQ.mEQ1J4EgUjtUFFlAvphOAvSaVAo'
-channel = discord.Object(id='223751299160735744')
+channel = discord.Object(id='469279366128336896')
 
 #prefijos a usar por el bot
 BOT_PREFIX = ("$", "%")
