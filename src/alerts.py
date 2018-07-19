@@ -28,8 +28,7 @@ ongoing = list()
 
 #Alert info output
 async def alerts(data, bot, channel):
-	items = 0
-    alertList = data['Alerts']
+	alertList = data['Alerts']
 	for i in range(0,len(alertList)):
 		alert = alertList[i]
 		case = 0
@@ -93,8 +92,8 @@ async def alerts(data, bot, channel):
 
 			if(not contained):
 				msg = await bot.send_message(channel, embed=actualAlert.toEmbed())
-				if(item in rewards):
-					mention = await bot.send_message(channel, roleID)
-					actualAlert.addMention(mention)
+				#if(item in rewards):
+				#	mention = await bot.send_message(channel, roleID)
+				#	actualAlert.addMention(mention)
 				actualAlert.changeMessage(msg)
 				ongoing.append(actualAlert)
