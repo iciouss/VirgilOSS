@@ -84,6 +84,7 @@ async def alerts(data, bot, channel):
 						x.timeLeft=setTimeLeft(timeLeft)
 						x.timeStart=setTimeLeft(timeStart)
 						x.booleano, x.stringStart=setStringStart(timeStart)
+						x.color = setColor(timeLeft)
 						await bot.edit_message(x.msg, embed=x.toEmbed())
 					else:
 						await bot.delete_message(x.msg)
