@@ -9,6 +9,7 @@ class Alert:
 		self.timeStart=setTimeLeft(timeStart)
 		self.booleano,self.stringStart=setStringStart(timeStart)
 		self.color=setColor(timeLeft)
+		self.hasMention=False
 
 	def changeMessage(self,msg):
 		self.msg=msg
