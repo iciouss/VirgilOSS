@@ -26,14 +26,15 @@ async def cetusTime(data, bot, channel):
 	timeLeft = datetime.datetime.utcfromtimestamp(millisLeft/1000.0)
 
 	cetus = Cetus(dayTime,timeLeft)
-    
+
 	try:
 		global msg
 		if (msg == 0):
 			msg = await bot.send_message(channel, embed=cetus.toEmbed())
 		else:
 			await bot.edit_message(msg, embed=cetus.toEmbed())
-			if millisLeft<0:
+			if millisLeft<0 
+and not dayTime:
 				msg=0
 	except IndexError:
 		pass
