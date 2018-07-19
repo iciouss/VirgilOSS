@@ -83,6 +83,7 @@ async def alerts(data, bot, channel):
 					if(millis>0):
 						x.timeLeft=setTimeLeft(timeLeft)
 						x.timeStart=setTimeLeft(timeStart)
+						x.booleano, x.stringStart=setStringStart(timeStart)
 						await bot.edit_message(x.msg, embed=x.toEmbed())
 					else:
 						await bot.delete_message(x.msg)
