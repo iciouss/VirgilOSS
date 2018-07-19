@@ -28,7 +28,8 @@ ongoing = list()
 
 #Alert info output
 async def alerts(data, bot, channel):
-	alertList = data['Alerts']
+	items = 0
+    alertList = data['Alerts']
 	for i in range(0,len(alertList)):
 		alert = alertList[i]
 		case = 0
